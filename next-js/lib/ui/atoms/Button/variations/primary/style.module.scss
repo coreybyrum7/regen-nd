@@ -1,0 +1,44 @@
+@import '../../../../../../app/styles/variables';
+
+.primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  color: #fff;
+  background: $color-button-primary;
+  text-decoration: none;
+  border-color: transparent;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.primary:focus {
+  outline: 2px solid $color-button-primary-active;
+  outline-offset: 2px;
+}
+
+.primary:hover {
+  background-color: $color-button-primary-hover;
+  background-position: 0px 0px;
+}
+
+.primary:active {
+  background-color: $color-button-primary-active;
+}
+
+.primary:disabled {
+  background-color: $color-button-primary-disabled;
+}
+
+/* .light.primary:disabled {
+  background-color: var($color-button-blue-disabled);
+}
+
+.dark.primary:disabled {
+  background: var($color-button-blue-disabled);
+} */

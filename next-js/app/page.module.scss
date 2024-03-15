@@ -1,0 +1,15 @@
+@import './styles/mixins';
+@import './styles/variables';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include default-veritical-layout-spacing();
+  @include default-horizontal-layout-spacing();
+
+  .title {
+    margin: 0;
+  }
+}

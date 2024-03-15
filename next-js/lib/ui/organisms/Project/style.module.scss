@@ -1,0 +1,23 @@
+@import 'app/styles/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .innerWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.wrapper .project {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &.border {
+    @include default-card();
+  }
+}

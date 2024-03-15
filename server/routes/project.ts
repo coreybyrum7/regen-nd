@@ -1,34 +1,12 @@
 import { Router } from 'express';
 import { Pool, PoolClient } from 'pg';
-import { postToCamelCase, projectToCamelCase } from '../utils';
+import { projectToCamelCase, postToCamelCase } from '../utils';
 
 const router = Router();
 const pool = new Pool({
   connectionString:
     process.env.DATABASE_URL ||
     'postgres://postgres:password@localhost:5432/challenge',
-});
-
-router.get('/', async (req, res) => {
-  let client: PoolClient;
-  try {
-    client = await pool.connect();
-
-    const projectQuery = await client.query('SELECT * FROM project');
-
-    if (projectQuery.rows.length !== 0) {
-      const projects = projectQuery.rows.map(project =>
-        projectToCamelCase(project),
-      );
-      res.json(projects);
-    } else {
-      res.send(404);
-    }
-  } catch (e) {
-    res.status(500).send(e);
-  } finally {
-    if (client) client.release();
-  }
 });
 
 router.get('/:projectId', async (req, res) => {
@@ -80,5 +58,3 @@ router.get('/:projectId/posts', async (req, res) => {
     if (client) client.release();
   }
 });
-
-export default router;

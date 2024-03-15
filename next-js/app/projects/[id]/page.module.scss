@@ -1,0 +1,10 @@
+@import '@/app/styles/mixins';
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @include default-veritical-layout-spacing();
+  @include default-horizontal-layout-spacing();
+}

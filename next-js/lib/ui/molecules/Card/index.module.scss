@@ -1,0 +1,26 @@
+@import 'app/styles/variables';
+@import 'app/styles/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+
+  &.landspace {
+    aspect-ratio: 16 / 9;
+  }
+
+  &.border {
+    @include default-card();
+  }
+
+  &:hover {    
+    .section {
+      h2,
+      p {
+        color: $color-text-hover;
+      }
+    }
+  }
+}
