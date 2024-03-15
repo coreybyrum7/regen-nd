@@ -14,7 +14,7 @@ NextJS 14 and the App Router's default feature server components and streaming w
 
 ## Routes 🗺️
 
-With this implementation, data is fetched on the server and cachced, which is the [default in NextJS](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#caching-data).
+With this implementation, data is fetched on the server and cached, which is the [default in NextJS](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#caching-data).
 
 🆕 `/` \
 While this route wasn't specifically requested, it seemed like a good idea to create a default route and not utilize a redirect. The page features a title and a link to all projects.
