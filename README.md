@@ -10,7 +10,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with TypeScript. I
 
 NextJS is a powerful React framework with the perfect tools for completing this challenge.
 
-NextJS 14 and the App Router's default feature server components and streaming with suspense, both perfect tools for this challenge. Streaming optimized the user experience by seamlessly handling dependent requests.
+NextJS 14 and the new App Router feature server components and streaming with suspense, both perfect tools for this challenge. Streaming optimized the user experience by seamlessly handling dependent requests.
 
 ## Routes 🗺️
 
