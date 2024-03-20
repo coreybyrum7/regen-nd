@@ -53,7 +53,7 @@ I'm a big fan of CSS pre-processors and SCSS has been my go-to over the past few
 
 1. Copy the `.env.local` into your `.env` file.
 
-2. Follow the README.md instructions in the `server` folder. The node server must be running.
+2. Follow the README.md instructions in the `server` folder. The docker engine must be running before moving on. Query the local server to ensure connection, localhost:5000/projects.
 
 3. From within the `next-js` folder, install the project dependencies:
 
