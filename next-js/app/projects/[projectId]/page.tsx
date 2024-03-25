@@ -1,4 +1,4 @@
-import '@/app/styles/_global.scss'
+import '@/lib/styles/_global.scss'
 import style from './page.module.scss'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
@@ -7,10 +7,16 @@ import { Button, CardSkeleton, Project } from '@/lib/ui'
 import { getProject } from '@/lib/query'
 import Link from 'next/link'
 
+type ProjectProps = {
+  params: {
+    projectId: string
+  }
+}
+
 export async function generateMetadata(
   { params }: ProjectProps,
 ): Promise<Metadata> {
-  const id = params.id
+  const id = params.projectId
   const project = await getProject(id)
 
   const projectName = project ? project.name : 'Untitled'
@@ -22,15 +28,9 @@ export async function generateMetadata(
   }
 }
 
-type ProjectProps = {
-  params: {
-    id: string
-  }
-}
-
 export default async function Page({ params }: ProjectProps) {
-  const project = await getProject(params.id)
-  
+  const project = await getProject(params.projectId)
+
   if (!project) {
     notFound()
   }
@@ -48,7 +48,7 @@ export default async function Page({ params }: ProjectProps) {
         />
       </Link>
       <Suspense fallback={<CardSkeleton numSections={2} />}>
-        <Project 
+        <Project
           includePosts={true}
           id={project.id}
           name={project.name}

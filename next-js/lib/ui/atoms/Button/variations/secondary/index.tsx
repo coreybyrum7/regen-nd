@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import styles from './style.module.scss'
 import sizingStyles from '../../style.module.scss'
-import { Props } from '@/lib/types'
+import { Props } from '../../types'
 import { Icon } from '@/lib/ui'
 
 export const SecondaryButton = ({

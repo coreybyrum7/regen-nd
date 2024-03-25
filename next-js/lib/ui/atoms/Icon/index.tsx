@@ -1,6 +1,6 @@
 import classnames from 'classnames'
-import { Icon as Props } from '@/lib/types'
 import { FaArrowLeftLong } from "react-icons/fa6"
+import { Props } from './types'
 
 export default function Icon({ name, ...props }: Props) {
   const className = classnames('icon', props.className)

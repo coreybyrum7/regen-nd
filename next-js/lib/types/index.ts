@@ -5,15 +5,13 @@
 /**
  * Component Types
  */
-export type { Project } from './components/project'
-export type { Post } from './components/post'
-export type { Props } from './components/button'
-export type { Icon } from './components/icon'
+export type { Project } from "./project";
+export type { Post } from "./post";
 
 /**
  * Shared Generic Types
  */
-export type { ReactChildren } from './generics/shared'
+export type { ReactChildren } from "./generics/shared";
 
 /**
  * Add if response types become abstractable

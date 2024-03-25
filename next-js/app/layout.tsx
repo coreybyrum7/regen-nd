@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './layout.scss'
+import { Providers } from '@/lib/providers';
 
 export const metadata: Metadata = {
   title: "Regen Network Development",
@@ -19,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className={inter.className}>
-      <body>{children}</body>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }

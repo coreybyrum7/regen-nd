@@ -1,11 +1,12 @@
-import '@/app/styles/_global.scss'
+import '@/lib/styles/_global.scss'
 import style from "./style.module.scss"
 import { Suspense } from "react"
-import { Card, CardSection, PostList, PostListSkeleton } from '@/lib/ui'
+import { Button, Card, CardSection, PostList, PostListSkeleton } from '@/lib/ui'
 import { Project as ProjectProps } from "@/lib/types"
+import Link from 'next/link'
 
 export default function Project({ id, createdAt, name, includePosts }: ProjectProps) {
-  const date = new Date(createdAt).toLocaleString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
+  const date = new Date(createdAt).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
   return (
     <article className={style.wrapper}>
@@ -18,7 +19,17 @@ export default function Project({ id, createdAt, name, includePosts }: ProjectPr
       </Card>
       {includePosts ? (
         <div className={style.innerWrapper}>
-          <h2>Posts</h2>
+          <div className={style.headline}>
+            <h2>Posts</h2>
+            <Link href={`/projects/${id}/posts/create`} className={style.link}>
+              <Button
+                buttonType='primary'
+                label='New'
+                size='large'
+                theme='dark'
+              />
+            </Link>
+          </div>
           <Suspense fallback={<PostListSkeleton />}>
             <PostList id={id} />
           </Suspense>

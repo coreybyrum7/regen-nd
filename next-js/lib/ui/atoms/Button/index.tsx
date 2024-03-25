@@ -1,4 +1,4 @@
-import { Props } from "@/lib/types/components/button"
+import { Props } from "@/lib/ui/atoms/Button/types"
 import { PrimaryButton } from "./variations/primary"
 import { SecondaryButton } from "./variations/secondary"
 

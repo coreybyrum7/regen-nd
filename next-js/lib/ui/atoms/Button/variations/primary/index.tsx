@@ -2,7 +2,7 @@ import classnames from 'classnames'
 import styles from './style.module.scss'
 import sizingStyles from '../../style.module.scss'
 import { Icon } from '@/lib/ui'
-import { Props } from '@/lib/types/components/button'
+import { Props } from '../../types'
 
 /**
  * Primary UI component for user interaction
@@ -14,18 +14,17 @@ export const PrimaryButton = ({
   includeIcon = false,
   iconPosition = 'right',
   label,
-  baseProps,
+  ...props
 }: Props) => {
   return (
     <button
-      type='button'
       className={classnames(
         styles.button,
         styles.primary,
         styles[theme],
         sizingStyles[size],
       )}
-      {...baseProps}
+      {...props}
     >
       {includeIcon && iconPosition === 'left' ? <Icon name='arrow-right' height={16} width={16} /> : null}
       {label}

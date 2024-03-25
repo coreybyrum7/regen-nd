@@ -1,4 +1,4 @@
-import '@/app/styles/_global.scss'
+import '@/lib/styles/_global.scss'
 import style from './style.module.scss'
 import Link from 'next/link'
 import { Project } from '@/lib/ui'
